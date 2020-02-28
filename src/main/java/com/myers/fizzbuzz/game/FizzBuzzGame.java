@@ -21,19 +21,31 @@ public class FizzBuzzGame implements Game {
         return fizzBuzzHandler.handle(number);
     }
 
-    protected Function<Integer, Optional<String>> getPlainNumberFunction(){
+    private Function<Integer, Optional<String>> getPlainNumberFunction(){
         return (Integer x) -> Optional.ofNullable(String.valueOf(x));
     }
 
-    protected Function<Integer, Optional<String>> getFizzBuzzFunction(){
-        return (Integer x) -> x > 0 && x % 15 == 0? Optional.of("FizzBuzz"):Optional.empty();
+    private Function<Integer, Optional<String>> getFizzBuzzFunction(){
+        return (Integer x) -> isFizzBuzz(x) ? Optional.of("FizzBuzz"):Optional.empty();
     }
 
-    protected Function<Integer, Optional<String>> getFizzFunction(){
-        return (Integer x) -> x > 0 && x % 3 == 0? Optional.of("Fizz"):Optional.empty();
+    private Function<Integer, Optional<String>> getFizzFunction(){
+        return (Integer x) -> isFizz(x) ? Optional.of("Fizz"):Optional.empty();
     }
 
-    protected Function<Integer, Optional<String>> getBuzzFunction(){
-        return (Integer x) -> x > 0 && x % 5 == 0? Optional.of("Buzz"):Optional.empty();
+    private Function<Integer, Optional<String>> getBuzzFunction(){
+        return (Integer x) -> isBuzz(x) ? Optional.of("Buzz"):Optional.empty();
+    }
+
+    protected boolean isBuzz(Integer x) {
+        return x > 0 && x % 5 == 0;
+    }
+
+    protected boolean isFizzBuzz(Integer x) {
+        return x > 0 && x % 15 == 0;
+    }
+
+    protected boolean isFizz(Integer x) {
+        return x > 0 && x % 3 == 0;
     }
 }

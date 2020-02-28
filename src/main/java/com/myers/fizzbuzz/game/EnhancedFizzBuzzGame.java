@@ -1,28 +1,17 @@
 package com.myers.fizzbuzz.game;
 
-import java.util.Optional;
-import java.util.function.Function;
-
 public class EnhancedFizzBuzzGame extends FizzBuzzGame {
 
-    @Override
-    protected Function<Integer, Optional<String>> getPlainNumberFunction(){
-        return (Integer x) -> Optional.ofNullable(String.valueOf(x));
+    protected boolean isBuzz(Integer x) {
+        return super.isBuzz(x) || hasFive(x);
     }
 
-    @Override
-    protected Function<Integer, Optional<String>> getFizzBuzzFunction(){
-        return (Integer x) -> (x > 0 && x % 15 == 0) || hasThreeAndFive(x)? Optional.of("FizzBuzz"):Optional.empty();
+    protected boolean isFizzBuzz(Integer x) {
+        return super.isFizzBuzz(x) || hasThreeAndFive(x);
     }
 
-    @Override
-    protected Function<Integer, Optional<String>> getFizzFunction(){
-        return (Integer x) -> (x > 0 && x % 3 == 0) || hasThree(x) ? Optional.of("Fizz"):Optional.empty();
-    }
-
-    @Override
-    protected Function<Integer, Optional<String>> getBuzzFunction(){
-        return (Integer x) -> (x > 0 && x % 5 == 0) || hasFive(x)? Optional.of("Buzz"):Optional.empty();
+    protected boolean isFizz(Integer x) {
+        return super.isFizz(x) || hasThree(x);
     }
 
     private boolean hasThree(int n) {
