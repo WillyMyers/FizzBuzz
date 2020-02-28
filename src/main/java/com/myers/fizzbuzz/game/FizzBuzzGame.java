@@ -5,6 +5,8 @@ import com.myers.fizzbuzz.handler.Handler;
 import java.util.Optional;
 import java.util.function.Function;
 
+import static com.myers.fizzbuzz.common.Common.*;
+
 public class FizzBuzzGame implements Game {
 
     private Handler fizzBuzzHandler;
@@ -26,15 +28,15 @@ public class FizzBuzzGame implements Game {
     }
 
     private Function<Integer, Optional<String>> getFizzBuzzFunction(){
-        return (Integer x) -> isFizzBuzz(x) ? Optional.of("FizzBuzz"):Optional.empty();
+        return (Integer x) -> isFizzBuzz(x) ? Optional.of(FIZZBUZZ):Optional.empty();
     }
 
     private Function<Integer, Optional<String>> getFizzFunction(){
-        return (Integer x) -> isFizz(x) ? Optional.of("Fizz"):Optional.empty();
+        return (Integer x) -> isFizz(x) ? Optional.of(FIZZ):Optional.empty();
     }
 
     private Function<Integer, Optional<String>> getBuzzFunction(){
-        return (Integer x) -> isBuzz(x) ? Optional.of("Buzz"):Optional.empty();
+        return (Integer x) -> isBuzz(x) ? Optional.of(BUZZ):Optional.empty();
     }
 
     protected boolean isBuzz(Integer x) {

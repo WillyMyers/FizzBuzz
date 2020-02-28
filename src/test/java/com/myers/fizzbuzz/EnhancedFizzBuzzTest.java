@@ -4,6 +4,7 @@ import com.myers.fizzbuzz.factory.FizzBuzzFactory;
 import com.myers.fizzbuzz.game.Game;
 import org.junit.Test;
 
+import static com.myers.fizzbuzz.common.Common.*;
 import static org.junit.Assert.assertEquals;
 
 public class EnhancedFizzBuzzTest {
@@ -13,17 +14,17 @@ public class EnhancedFizzBuzzTest {
     //Happy path tests
     @Test
     public void testCorrectAnswerFor3(){
-        assertEquals("Fizz", fizzBuzz.play(3));
+        assertEquals(FIZZ, fizzBuzz.play(3));
     }
 
     @Test
     public void testCorrectAnswerFor5(){
-        assertEquals("Buzz", fizzBuzz.play(5));
+        assertEquals(BUZZ, fizzBuzz.play(5));
     }
 
     @Test
     public void testCorrectAnswerFor15(){
-        assertEquals("FizzBuzz", fizzBuzz.play(15));
+        assertEquals(FIZZBUZZ, fizzBuzz.play(15));
     }
 
     @Test
@@ -33,17 +34,17 @@ public class EnhancedFizzBuzzTest {
 
     @Test
     public void testCorrectAnswerForNumberWithA5(){
-        assertEquals("Buzz", fizzBuzz.play(51));
+        assertEquals(BUZZ, fizzBuzz.play(51));
     }
 
     @Test
     public void testCorrectAnswerForNumberWithA3(){
-        assertEquals("Fizz", fizzBuzz.play(13));
+        assertEquals(FIZZ, fizzBuzz.play(13));
     }
 
     @Test
     public void testCorrectAnswerForNumberWith53(){
-        assertEquals("FizzBuzz", fizzBuzz.play(53));
+        assertEquals(FIZZBUZZ, fizzBuzz.play(53));
     }
 
     //These are out of the range of the game but if passed will not throw an error, this may or may not be the desired behaviour

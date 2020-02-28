@@ -1,5 +1,6 @@
 package com.myers.fizzbuzz;
 
+import static com.myers.fizzbuzz.common.Common.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -15,17 +16,17 @@ public class FizzBuzzTest {
     //Happy path tests
     @Test
     public void testCorrectAnswerFor3(){
-        assertEquals("Fizz", fizzBuzz.play(3));
+        assertEquals(FIZZ, fizzBuzz.play(3));
     }
 
     @Test
     public void testCorrectAnswerFor5(){
-        assertEquals("Buzz", fizzBuzz.play(5));
+        assertEquals(BUZZ, fizzBuzz.play(5));
     }
 
     @Test
     public void testCorrectAnswerFor15(){
-        assertEquals("FizzBuzz", fizzBuzz.play(15));
+        assertEquals(FIZZBUZZ, fizzBuzz.play(15));
     }
 
     @Test

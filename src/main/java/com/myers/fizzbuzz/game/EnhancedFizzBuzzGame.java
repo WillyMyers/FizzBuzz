@@ -1,5 +1,9 @@
 package com.myers.fizzbuzz.game;
 
+import static com.myers.fizzbuzz.common.Common.hasFive;
+import static com.myers.fizzbuzz.common.Common.hasThree;
+import static com.myers.fizzbuzz.common.Common.hasThreeAndFive;
+
 public class EnhancedFizzBuzzGame extends FizzBuzzGame {
 
     @Override
@@ -17,25 +21,4 @@ public class EnhancedFizzBuzzGame extends FizzBuzzGame {
         return super.isFizz(x) || hasThree(x);
     }
 
-    private boolean hasThree(int n) {
-        while(n > 0) {
-            if(n % 10 == 3)
-                return true;
-            n=n/10;
-        }
-        return false;
-    }
-
-    private boolean hasFive(int n) {
-        while(n > 0) {
-            if(n % 10 == 5)
-                return true;
-            n=n/10;
-        }
-        return false;
-    }
-
-    private boolean hasThreeAndFive(int n){
-        return hasThree(n) && hasFive(n);
-    }
 }
