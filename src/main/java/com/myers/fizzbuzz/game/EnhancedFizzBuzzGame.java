@@ -25,7 +25,7 @@ public class EnhancedFizzBuzzGame extends FizzBuzzGame {
         return (Integer x) -> (x > 0 && x % 5 == 0) || hasFive(x)? Optional.of("Buzz"):Optional.empty();
     }
 
-    public boolean hasThree(int n) {
+    private boolean hasThree(int n) {
         while(n > 0) {
             if(n % 10 == 3)
                 return true;
@@ -34,7 +34,7 @@ public class EnhancedFizzBuzzGame extends FizzBuzzGame {
         return false;
     }
 
-    public boolean hasFive(int n) {
+    private boolean hasFive(int n) {
         while(n > 0) {
             if(n % 10 == 5)
                 return true;
@@ -43,7 +43,7 @@ public class EnhancedFizzBuzzGame extends FizzBuzzGame {
         return false;
     }
 
-    public boolean hasThreeAndFive(int n){
+    private boolean hasThreeAndFive(int n){
         return hasThree(n) && hasFive(n);
     }
 }
