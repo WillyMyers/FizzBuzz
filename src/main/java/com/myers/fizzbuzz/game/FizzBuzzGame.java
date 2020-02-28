@@ -21,19 +21,19 @@ public class FizzBuzzGame implements Game {
         return fizzBuzzHandler.handle(number);
     }
 
-    private Function<Integer, Optional<String>> getPlainNumberFunction(){
+    protected Function<Integer, Optional<String>> getPlainNumberFunction(){
         return (Integer x) -> Optional.ofNullable(String.valueOf(x));
     }
 
-    private Function<Integer, Optional<String>> getFizzBuzzFunction(){
+    protected Function<Integer, Optional<String>> getFizzBuzzFunction(){
         return (Integer x) -> x > 0 && x % 15 == 0? Optional.of("FizzBuzz"):Optional.empty();
     }
 
-    private Function<Integer, Optional<String>> getFizzFunction(){
+    protected Function<Integer, Optional<String>> getFizzFunction(){
         return (Integer x) -> x > 0 && x % 3 == 0? Optional.of("Fizz"):Optional.empty();
     }
 
-    private Function<Integer, Optional<String>> getBuzzFunction(){
+    protected Function<Integer, Optional<String>> getBuzzFunction(){
         return (Integer x) -> x > 0 && x % 5 == 0? Optional.of("Buzz"):Optional.empty();
     }
 }

@@ -12,13 +12,13 @@ import java.util.Collection;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class ParamertizedFizzBuzzTest {
+public class ParametizedFizzBuzzTest {
 
     private int input;
     private String expected;
-    Game fizzBuzz = FizzBuzzFactory.getFizzBuzzGame();
+    private Game fizzBuzz = FizzBuzzFactory.getFizzBuzzGame();
 
-    public ParamertizedFizzBuzzTest(int input, String expected) {
+    public ParametizedFizzBuzzTest(int input, String expected) {
         super();
         this.input = input;
         this.expected = expected;
