@@ -4,7 +4,7 @@ import com.myers.fizzbuzz.factory.FizzBuzzFactory;
 import com.myers.fizzbuzz.game.Game;
 import org.junit.Test;
 
-import static com.myers.fizzbuzz.common.Common.*;
+import static com.myers.fizzbuzz.common.Constants.*;
 import static org.junit.Assert.assertEquals;
 
 public class EnhancedFizzBuzzTest {

@@ -5,8 +5,11 @@ import com.myers.fizzbuzz.handler.Handler;
 import java.util.Optional;
 import java.util.function.Function;
 
-import static com.myers.fizzbuzz.common.Common.*;
+import static com.myers.fizzbuzz.common.Constants.*;
 
+/**
+ * The classic version of FizzBuzz
+ */
 public class FizzBuzzGame implements Game {
 
     private Handler fizzBuzzHandler;

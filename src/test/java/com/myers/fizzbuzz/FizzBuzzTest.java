@@ -1,13 +1,11 @@
 package com.myers.fizzbuzz;
 
-import static com.myers.fizzbuzz.common.Common.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import com.myers.fizzbuzz.factory.FizzBuzzFactory;
-import com.myers.fizzbuzz.game.FizzBuzzGame;
 import com.myers.fizzbuzz.game.Game;
 import org.junit.Test;
+
+import static com.myers.fizzbuzz.common.Constants.*;
+import static org.junit.Assert.assertEquals;
 
 public class FizzBuzzTest {
 
@@ -15,7 +13,7 @@ public class FizzBuzzTest {
 
     //Happy path tests
     @Test
-    public void testCorrectAnswerFor3(){
+    public void testCorrectAnswerFor3() {
         assertEquals(FIZZ, fizzBuzz.play(3));
     }
 

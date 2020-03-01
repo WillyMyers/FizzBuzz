@@ -1,9 +1,11 @@
 package com.myers.fizzbuzz.game;
 
-import static com.myers.fizzbuzz.common.Common.hasFive;
-import static com.myers.fizzbuzz.common.Common.hasThree;
-import static com.myers.fizzbuzz.common.Common.hasThreeAndFive;
+import static com.myers.fizzbuzz.common.UtilityMethods.*;
 
+/**
+ * A modified version of the game that returns based on the presence of 3, 5, or
+ * both in the number passed in
+ */
 public class EnhancedFizzBuzzGame extends FizzBuzzGame {
 
     @Override

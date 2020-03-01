@@ -3,6 +3,10 @@ package com.myers.fizzbuzz.handler;
 import java.util.Optional;
 import java.util.function.Function;
 
+/**
+ * Handler that takes a function to call and another handler to delegate to if necessary.
+ * Chain of responsibility with a dash of State pattern thrown in.
+ */
 public class Handler {
 
     private Handler next;

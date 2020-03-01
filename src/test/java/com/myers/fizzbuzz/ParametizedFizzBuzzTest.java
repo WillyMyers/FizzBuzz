@@ -9,7 +9,7 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static com.myers.fizzbuzz.common.Common.*;
+import static com.myers.fizzbuzz.common.Constants.*;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
