@@ -15,7 +15,8 @@ public class FizzBuzzGame implements Game {
         Handler plain = new Handler(null, getPlainNumberFunction());
         Handler fizz = new Handler(plain, getFizzFunction());
         Handler buzz = new Handler(fizz, getBuzzFunction());
-        fizzBuzzHandler = new Handler(buzz, getFizzBuzzFunction());
+        Handler fizzBuzz = new Handler(buzz, getFizzBuzzFunction());
+        fizzBuzzHandler = new Handler(fizzBuzz, getValidNumberFunction());
     }
 
     @Override
@@ -28,26 +29,36 @@ public class FizzBuzzGame implements Game {
     }
 
     private Function<Integer, Optional<String>> getFizzBuzzFunction(){
-        return (Integer x) -> isFizzBuzz(x) ? Optional.of(FIZZBUZZ):Optional.empty();
+        return (Integer x) -> Optional.ofNullable(isFizzBuzz(x) ? FIZZBUZZ : null);
     }
 
     private Function<Integer, Optional<String>> getFizzFunction(){
-        return (Integer x) -> isFizz(x) ? Optional.of(FIZZ):Optional.empty();
+        return (Integer x) -> Optional.ofNullable(isFizz(x) ? FIZZ : null);
     }
 
     private Function<Integer, Optional<String>> getBuzzFunction(){
-        return (Integer x) -> isBuzz(x) ? Optional.of(BUZZ):Optional.empty();
+        return (Integer x) -> Optional.ofNullable(isBuzz(x) ? BUZZ : null);
+    }
+
+    private Function<Integer, Optional<String>> getValidNumberFunction(){
+        //might want to change this to throw an exception if an invalid number is passed
+        return (Integer x) -> Optional.ofNullable(isValidNumber(x) ? null : String.valueOf(x));
+    }
+
+    protected boolean isValidNumber(Integer x) {
+        return x > 0;
     }
 
     protected boolean isBuzz(Integer x) {
-        return x > 0 && x % 5 == 0;
+        return x % 5 == 0;
     }
 
     protected boolean isFizzBuzz(Integer x) {
-        return x > 0 && x % 15 == 0;
+        return x % 15 == 0;
     }
 
     protected boolean isFizz(Integer x) {
-        return x > 0 && x % 3 == 0;
+        return x % 3 == 0;
     }
+
 }
