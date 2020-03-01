@@ -1,7 +1,6 @@
-package com.myers.fizzbuzz;
+package com.myers.fizzbuzz.game;
 
 import com.myers.fizzbuzz.factory.FizzBuzzFactory;
-import com.myers.fizzbuzz.game.Game;
 import org.junit.Test;
 
 import static com.myers.fizzbuzz.common.Constants.*;

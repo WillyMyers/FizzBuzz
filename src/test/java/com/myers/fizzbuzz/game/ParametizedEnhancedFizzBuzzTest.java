@@ -1,7 +1,6 @@
-package com.myers.fizzbuzz;
+package com.myers.fizzbuzz.game;
 
 import com.myers.fizzbuzz.factory.FizzBuzzFactory;
-import com.myers.fizzbuzz.game.Game;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -13,13 +12,13 @@ import static com.myers.fizzbuzz.common.Constants.*;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class ParametizedFizzBuzzTest {
+public class ParametizedEnhancedFizzBuzzTest {
 
     private int input;
     private String expected;
-    private Game fizzBuzz = FizzBuzzFactory.getFizzBuzzGame();
+    private Game fizzBuzz = FizzBuzzFactory.getEnhancedFizzBuzzGame();
 
-    public ParametizedFizzBuzzTest(int input, String expected) {
+    public ParametizedEnhancedFizzBuzzTest(int input, String expected) {
         super();
         this.input = input;
         this.expected = expected;
@@ -45,7 +44,7 @@ public class ParametizedFizzBuzzTest {
                 {10,BUZZ},
                 {11,"11"},
                 {12,FIZZ},
-                {13,"13"},
+                {13,FIZZ},
                 {14,"14"},
                 {15,FIZZBUZZ},
                 {16,"16"},
@@ -55,7 +54,7 @@ public class ParametizedFizzBuzzTest {
                 {20,BUZZ},
                 {21,FIZZ},
                 {22,"22"},
-                {23,"23"},
+                {23,FIZZ},
                 {24,FIZZ},
                 {25,BUZZ},
                 {26,"26"},
@@ -63,19 +62,19 @@ public class ParametizedFizzBuzzTest {
                 {28,"28"},
                 {29,"29"},
                 {30,FIZZBUZZ},
-                {31,"31"},
-                {32,"32"},
+                {31,FIZZ},
+                {32,FIZZ},
                 {33,FIZZ},
-                {34,"34"},
-                {35,BUZZ},
+                {34,FIZZ},
+                {35,FIZZBUZZ},
                 {36,FIZZ},
-                {37,"37"},
-                {38,"38"},
+                {37,FIZZ},
+                {38,FIZZ},
                 {39,FIZZ},
                 {40,BUZZ},
                 {41,"41"},
                 {42,FIZZ},
-                {43,"43"},
+                {43,FIZZ},
                 {44,"44"},
                 {45,FIZZBUZZ},
                 {46,"46"},
@@ -83,15 +82,15 @@ public class ParametizedFizzBuzzTest {
                 {48,FIZZ},
                 {49,"49"},
                 {50,BUZZ},
-                {51,FIZZ},
-                {52,"52"},
-                {53,"53"},
-                {54,FIZZ},
+                {51,BUZZ},
+                {52,BUZZ},
+                {53,FIZZBUZZ},
+                {54,BUZZ},
                 {55,BUZZ},
-                {56,"56"},
-                {57,FIZZ},
-                {58,"58"},
-                {59,"59"},
+                {56,BUZZ},
+                {57,BUZZ},
+                {58,BUZZ},
+                {59,BUZZ},
                 {60,FIZZBUZZ},
                 {61,"61"},
                 {62,"62"},
@@ -105,7 +104,7 @@ public class ParametizedFizzBuzzTest {
                 {70,BUZZ},
                 {71,"71"},
                 {72,FIZZ},
-                {73,"73"},
+                {73,FIZZ},
                 {74,"74"},
                 {75,FIZZBUZZ},
                 {76,"76"},
@@ -115,7 +114,7 @@ public class ParametizedFizzBuzzTest {
                 {80,BUZZ},
                 {81,FIZZ},
                 {82,"82"},
-                {83,"83"},
+                {83,FIZZ},
                 {84,FIZZ},
                 {85,BUZZ},
                 {86,"86"},
